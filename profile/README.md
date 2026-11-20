@@ -26,7 +26,8 @@ And it's quicker at the job. On 13 real pages, 24 MB of Wikipedia, MDN, GitHub, 
 
 - **[parsec](https://github.com/parsec-html/parsec)**: the parser, CSS selectors Level 4, XPath 1.0, declarative shadow DOM, the WHATWG Encoding and URL standards, and CSS stylesheets with the cascade. It passes all 7,042 html5lib tokenizer tests and every web-platform-tests tree-construction case that runs without JavaScript.
 - **From Python, JavaScript or C**: bindings for each live in the same repository, free-threaded Python and WebAssembly included.
-- **[What's done and what's next](https://github.com/parsec-html/parsec/blob/main/ROADMAP.md)**: the line between the two is kept sharp. 0.1.0, the first release on crates.io, PyPI and npm, is next; until then, `parsec-html = { git = "https://github.com/parsec-html/parsec" }`.
+- **Install it**: 0.1.0 is out. `cargo add parsec-html`, `pip install parsec-html` or `npm install parsec-html`, and the C library is on the [release](https://github.com/parsec-html/parsec/releases/tag/v0.1.0).
+- **[What's done and what's next](https://github.com/parsec-html/parsec/blob/main/ROADMAP.md)**: the line between the two is kept sharp.
 
 ## Get involved
 
