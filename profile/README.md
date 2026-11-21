@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Parsec: parsers for the web, in Rust." src="header.svg" width="100%">
+  <img alt="Parsec, the parsing foundation for the web, in Rust." src="header.svg" width="100%">
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
   <a href="https://github.com/parsec-html/parsec/discussions">Discussions</a>
 </p>
 
-Parsec is a set of parsers for the web, in memory-safe Rust, that you can take one at a time. It started as an HTML parser, because Netweir needed one faster than Lexbor, and the HTML parser is still the part that's been in use longest. CSS with the cascade, XPath, and the WHATWG Encoding and URL standards sit beside it. A JavaScript parser of our own comes next, then XML, each with its own tree over shared plumbing.
+Parsec is the parsing foundation for the web, in memory-safe Rust: HTML, CSS, JavaScript and XML, one crate at a time, so you build on exactly the parsers you need. It started as an HTML parser, because Netweir needed one faster than Lexbor, and the HTML parser is still the part that's been in use longest. CSS with the cascade, XPath, and the WHATWG Encoding and URL standards sit beside it. A JavaScript parser of our own comes next, then XML, each with its own tree over shared plumbing.
 
 If you parse HTML for a living, you've probably met Lexbor too, directly or through selectolax, PHP's `Dom\HTMLDocument`, nokolexbor or lazy_html. It's fast, and it follows the spec. What people keep asking it for is the rest: where a node came from in the source, XPath, selectors like `:lang()` that it parses and never matches, documents you can share across threads, and a node you still hold after it's removed that doesn't read freed memory. Parsec's HTML parser is that list.
 
