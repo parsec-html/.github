@@ -10,7 +10,9 @@
   <a href="https://github.com/parsec-html/parsec/discussions">Discussions</a>
 </p>
 
-Parsec is the parsing foundation for the web, in memory-safe Rust: HTML, CSS, JavaScript and XML, one crate at a time, so you build on exactly the parsers you need. It started as an HTML parser, because Netweir needed one faster than Lexbor, and the HTML parser is still the part that's been in use longest. CSS with the cascade, XPath, and the WHATWG Encoding and URL standards sit beside it. A JavaScript parser of our own comes next, then XML, each with its own tree over shared plumbing.
+Parsec is the parsing foundation for the web, in memory-safe Rust: HTML, CSS, JavaScript and XML, one crate at a time, so you build on exactly the parsers you need. It started as an HTML parser, because Netweir needed one faster than Lexbor, and the HTML parser is still the part that's been in use longest. CSS with the cascade, XPath, and the WHATWG Encoding and URL standards sit beside it. JavaScript and XML came in 0.3.0, each with its own tree over shared plumbing.
+
+Netweir, the crawling and extraction framework that first parser was written for, now runs on Parsec the way you would: `parsec-web-core` and `parsec-xpath` from crates.io, on Netweir's `main` since [netweir#477](https://github.com/netweir/netweir/pull/477) and in its next release. It pays Parsec back in testing. Every Monday, Netweir's CI parses 300 production pages from a pinned list of 2,709 with Parsec and with html5ever, and fails if Parsec panics, hangs or builds a different tree. Spec suites can't tell you a parser is right on the pages people actually crawl. That run can.
 
 If you parse HTML for a living, you've probably met Lexbor too, directly or through selectolax, PHP's `Dom\HTMLDocument`, nokolexbor or lazy_html. It's fast, and it follows the spec. What people keep asking it for is the rest: where a node came from in the source, XPath, selectors like `:lang()` that it parses and never matches, documents you can share across threads, and a node you still hold after it's removed that doesn't read freed memory. Parsec's HTML parser is that list.
 
@@ -28,7 +30,7 @@ And it's quicker at the job. On 13 real pages, 24 MB of Wikipedia, MDN, GitHub, 
 
 - **[parsec](https://github.com/parsec-html/parsec)**: the parser, CSS selectors Level 4, XPath 1.0, declarative shadow DOM, the WHATWG Encoding and URL standards, and CSS stylesheets with the cascade. It passes all 7,042 html5lib tokenizer tests and every web-platform-tests tree-construction case that runs without JavaScript.
 - **From Python, JavaScript or C**: bindings for each live in the same repository, free-threaded Python and WebAssembly included.
-- **Install it**: 0.2.0 is out. `cargo add parsec-html`, `pip install parsec-html` or `npm install parsec-html`, and the C library is on the [release](https://github.com/parsec-html/parsec/releases/tag/v0.2.0).
+- **Install it**: 0.3.0 is out. `cargo add parsec-web`, `pip install parsec-web` or `npm install parsec-web`, and the C library is on the [release](https://github.com/parsec-html/parsec/releases/tag/v0.3.0). Up to 0.2 the packages were `parsec-html`.
 - **[Road to the parsing platform](https://github.com/orgs/parsec-html/projects/2)**: JavaScript, XML and the rest, milestone by milestone. Pick any open item.
 - **[What's done and what's next](https://github.com/parsec-html/parsec/blob/main/ROADMAP.md)**: the line between the two is kept sharp.
 
